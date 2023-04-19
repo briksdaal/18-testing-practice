@@ -32,6 +32,15 @@ test('length is correct', () => {
   expect(analyzeArray([-8, -4, -2]).length).toBe(3);
 });
 
+test('full object returned', () => {
+  expect(analyzeArray([1, 2, 3, 4])).toEqual({
+    average: 2.5,
+    min: 1,
+    max: 4,
+    length: 4,
+  });
+});
+
 test('empty array returns null values', () => {
   expect(analyzeArray([]).average).toBeNull();
   expect(analyzeArray([]).min).toBeNull();
