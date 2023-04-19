@@ -1,7 +1,7 @@
 import calc from './calculator.js';
 
 describe('test operations existing', () => {
-  test('calc operations exist', () => {
+  test.only('calc operations exist', () => {
     expect(calc.add).toBeTruthy();
     expect(calc.subtract).toBeTruthy();
     expect(calc.divide).toBeTruthy();
