@@ -9,11 +9,11 @@ test('one char string and shift of 1', () => {
 
 test('char combinations and bigger shifts', () => {
   expect(caesarCipher('abc', 3))
-    .toMatch('dfg');
-  expect(caesarCipher('asdfwaef', 5))
-    .toMatch('fxikbfjk');
-  expect(caesarCipher('hewiuhrqmqwe', 4))
-    .toMatch('liamylvuquai');
+    .toMatch('def');
+  expect(caesarCipher('asdfdaef', 5))
+    .toMatch('fxikifjk');
+  expect(caesarCipher('hewiuhrqmqwe', 2))
+    .toMatch('jgykwjtsosyg');
 });
 
 test('text with spaces', () => {
@@ -36,11 +36,18 @@ test('z + 1 wraps to a', () => {
 });
 
 test('negative shift', () => {
-  expect(caesarCipher('anything confidential to say', -5))
+  expect(caesarCipher('anything confidential to say', -6))
     .toMatch('uhsnbcha wihzcxyhncuf ni mus');
 });
 
 test('combination of negative shift, symbols, and cases', () => {
   expect(caesarCipher('ReplaceD by a lEtter$some fixed@number of positions!!', -8))
     .toMatch('JwhdsuwV tq s dWllwj$kgew xapwv@fmetwj gx hgkalagfk!!');
+});
+
+test('big shifts', () => {
+  expect(caesarCipher('Down the alphabet', 451))
+    .toMatch('Mxfw cqn juyqjknc');
+  expect(caesarCipher('Down the alphabet', -451))
+    .toMatch('Ufne kyv rcgyrsvk');
 });
